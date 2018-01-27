@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum.">
+    <meta name="keywords" content="lorem, ipsum, dolor">
+    
+    <title>Lorem Ipsum</title>
+  </head>
+
+  <body>
+    <header class="clearfix">
+      
+      <ul class="main-menu">
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Lorem</a></li>
+      </ul>
+
+      <figure class="clearfix">
+        <img src="logo.png" сlass="logo" width="100">
+        <figcaption>
+          <h1>Company
+          <br>
+          Name</h1>
+        </figcaption>
+      </figure>
+
+      <form action="" method="post">
+        <label for="login-field">login</label>
+        <input type="text" id="login-field" name="login" title="Please enter your login" placeholder="Your login" required>
+        <br>
+        <label for="password-field">password</label>
+        <input type="password" id="password-field" name="password" title="Please enter your password" placeholder="Your password" required>
+        <br>
+        <a href="#" onclick="openRestorePasswordForm()">Forgot your password?</a>
+        <span>|</span>
+        <a href="#" onclick="openSignUpForm()">Sign up</a>
+        <input type="submit" value="Log in">
+      </form>
+  
+    </header>
+    
+    <div class="overlay overlay-sign-up-form">
+      <div class="popup">
+      <h1>New here? Please sign up!</h1>
+      <input type="button" onclick="closeSignUpForm()" value="x">
+      <hr>
+      <form action="" method="post">
+            <label for="login-field">Your login:</label>
+            <br>
+            <input type="text" name="login" id="login-field" placeholder="Your login" title="Can contain letters, numbers, underscores, or dashes" required>
+            <br>
+            <label for="password-field">Password:</label>
+            <br>
+            <input type="password" name="password" id="password-field" placeholder="Your password" title="Must contain at least 1 uppercase letter & 1 symbol" required>
+            <br>
+            <label for="password-field">Repeat password:</label>
+            <br>
+            <input type="password" name="repeat-password" id="repeat-password-field" placeholder="Please re-enter your password" required>
+            <br>
+            <input type="checkbox" name="subscribe" id="subscribe-field" checked>
+            <label for="subscribe-field">Subscribe to our newsletter</label>
+            <br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+  </div>
+  
+  <div class="overlay overlay-restore-password-form">
+    <div class="popup">
+      <label for="email-field">Please enter you e-mail here, and we'll send you the password reset link!</label>
+      <input type="button" onclick="closeRestorePasswordForm()" value="x">
+      <br>
+      <input type="email" id="email-field" placeholder="Please enter your e-mail" title="Please enter your e-mail">
+    </div> 
+  </div>
+  
+    <div class="container-social">
+      <ul>
+        <li><a href="#" class="social social-fb"></a></li>
+        <li><a href="#" class="social social-tw"></a></li>
+        <li><a href="#" class="social social-inst"></a></li>
+      </ul>
+    </div>
+    
+    <div class="side-menu">
+      <ul>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+      </ul>
+    </div>
+    
+    <div class="content-box">
+      <h1>Lorem ipsum?</h1>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum. Nullam faucibus mauris eget est lobortis, et eleifend metus volutpat. Quisque id mi et magna feugiat gravida. Quisque lacinia turpis laoreet tellus imperdiet suscipit. Nullam dignissim cursus ornare. Etiam id tempor enim. Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
+       <hr>
+       <h2>Lorem ipsum</h2>
+       <p>Nulla commodo sapien vel ex malesuada scelerisque. Aenean tincidunt ornare velit malesuada luctus. Sed congue sagittis leo. Nam dui elit, hendrerit in cursus id, sagittis sed lacus. Suspendisse potenti. Quisque dapibus enim sagittis mi rhoncus iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et pretium turpis. Donec id libero lobortis risus dapibus finibus a vitae nisi. Morbi fringilla pulvinar congue. Integer hendrerit placerat molestie. Fusce magna risus, commodo id volutpat sed, vestibulum ac tortor. Curabitur vulputate facilisis velit, id dapibus erat. </p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum. Nullam faucibus mauris eget est lobortis, et eleifend metus volutpat. Quisque id mi et magna feugiat gravida. Quisque lacinia turpis laoreet tellus imperdiet suscipit. Nullam dignissim cursus ornare. Etiam id tempor enim. Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum. Nullam faucibus mauris eget est lobortis, et eleifend metus volutpat. Quisque id mi et magna feugiat gravida. Quisque lacinia turpis laoreet tellus imperdiet suscipit. Nullam dignissim cursus ornare. Etiam id tempor enim. Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
+   
+    </div>
+    
+    <footer>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin.  
+    </footer>
+    <script src="script.js"></script>
+    
+  </body>
+</html>

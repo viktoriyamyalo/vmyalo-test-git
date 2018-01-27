@@ -1,0 +1,274 @@
+header {
+    background-color: #3B3B6D;
+    color: white;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  
+  /* main menu */
+  
+  .main-menu {
+     list-style: none;
+  }
+  
+  .main-menu li {
+     display: inline;
+  }
+  
+  .main-menu li a {
+      margin-right:-10px;
+      padding: 10px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      border-left: 2px solid white;
+  }
+  
+  .main-menu li:last-child a {
+      margin-right: 0;
+  }
+  
+  .main-menu li a:hover {
+    background-color: #77a6f7;
+  }
+  
+  /* logo */
+  
+  
+  header figure img {
+    float:left;
+  }
+  
+  header figure figcaption {
+    padding: 20px 10px;
+    font-size: 1.25em;
+    float: right;
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* form*/
+  
+  header form {
+    text-align: right;
+  }
+  
+  header form input {
+    margin: 5px;
+  }
+  header form a {
+    text-decoration: none;
+    color: grey;
+    font-size: 0.5em;
+  }
+  
+  header form a:hover {
+    color: white;
+  }
+  
+  /* sign up popup */
+  
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(152,152,152,0.75);
+    z-index: 10;
+    display: none;
+  }
+  
+  .overlay-sign-up-form .popup {
+    width: 400px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    position: relative;
+    top: 150px;
+    margin: auto;
+    background-color: white;
+  }
+  
+  .overlay-sign-up-form .popup h1 {
+    text-align: center;
+    font-size: 1.25em;
+    margin: 10px;
+  }
+  .overlay-sign-up-form .popup input {
+    margin: 5px;
+    margin-left: 50px;
+  }
+  
+  .overlay-sign-up-form .popup label {
+    margin-left: 50px;
+  }
+  
+  .overlay-sign-up-form .popup label[for="subscribe-field"] {
+    margin-left: 0;
+  }
+  
+  .overlay-sign-up-form .popup input[type="button"] {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  .overlay-sign-up-form .popup input[type="checkbox"], .popup input[type="submit"] {
+    cursor: pointer;
+  }
+  
+  /* restore password popup */
+  
+  
+  .overlay-restore-password-form .popup {
+    width: 400px;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    position: relative;
+    top: 150px;
+    margin: auto;
+    background-color: white;
+    text-align: left;
+  }
+  
+  .overlay-restore-password-form .popup input[type="button"] {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  .overlay-restore-password-form .popup label, .overlay-restore-password-form .popup input[type="email"] {
+    padding: 5px;
+    margin: 10px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  /* social icons */
+  .container-social {
+    position: fixed;
+    margin: 0;
+    padding: 10px;
+    top: 150px;
+    right: 5px;
+    border-right: 5px dotted lightgrey;
+  }
+  
+  .container-social ul {
+    margin: 0;
+    list-style: none;
+  }
+  
+  .social {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background: url("sprites-social.png") no-repeat 0 0;
+  }
+  
+  .social-fb {
+    background-position: -48px 0;
+  }
+  
+  .social-inst {
+    background-position: -240px 0;
+  }
+  
+  .social-tw:hover {
+    background-position: 0 -48px;
+    transform: scale(1.1); 
+  }
+  
+  .social-fb:hover {
+    background-position: -48px -48px;
+    transform: scale(1.1); 
+  }
+  
+  .social-inst:hover {
+    background-position: -240px -48px;
+    transform: scale(1.1); 
+  }
+  
+  /* side menu */
+  
+  .side-menu {
+      padding: 0;
+      width: 200px;
+      position: absolute;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+  }
+  
+  .side-menu a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      display: block;
+      padding: 10px 15px;
+      border-bottom: 2px solid #3B3B6D;
+  }
+  
+  .side-menu a:hover {
+      background-color: #77a6f7;
+  }
+  
+  
+  /* main content */
+  
+  .content-box {
+    padding: 25px;
+    padding-left: 250px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+  }
+  
+  .content-box h1 {
+    font-size: 3em;
+    margin: 10px;
+  }
+  
+  .content-box h2 {
+    font-size: 2em;
+    margin: 10px;
+  }
+  
+  .content-box p {
+    margin: 5px;
+    padding: 5px;
+    line-height: 1.2em;
+  }
+  
+  
+  /*footer*/
+  
+  footer {
+    background-color: #3B3B6D;
+    height: 60px;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1.5em;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
