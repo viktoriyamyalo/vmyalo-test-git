@@ -14,7 +14,7 @@ body {
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 728px) {
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
@@ -41,7 +41,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 728px) {
   .logo, .container-social {
     display: none;
   }
