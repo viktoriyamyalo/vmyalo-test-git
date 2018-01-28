@@ -29,9 +29,11 @@ body {
   .col-12 {width: 100%;}
 
   .popup {
-    position: absolute;
-    left: 35%;
-    top: 75px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -180px;
+   margin-top: -180px;
   }
 }
 
@@ -47,11 +49,11 @@ body {
   }
 
   .popup {
+    max-width: 300px;
     position: absolute;
     left: 10px;
     top: 75px;
-    max-width: 300px;
-  }
+   }
 
 }
 
@@ -170,6 +172,7 @@ header {
     border: 1px solid lightgrey;
     padding: 10px;
     background-color: white;
+
   }
   
   .overlay-sign-up-form .popup h1 {
