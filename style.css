@@ -1,36 +1,99 @@
-header {
-    background-color: #3B3B6D;
-    color: white;
-    width: 100%;
-    font-size: 1.5em;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
+/* making the page responsive */
+
+body {
+  font-family: "Muller", "Arial", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  width: 100%;
+  padding: 10px;
+  float: left;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+@media only screen and (max-width: 600px) {
+  .logo, .container-social {
+    display: none;
   }
+  figcaption {
+    text-align: center;
+  }
+  footer .col-9 {
+    padding: 0;
+  }
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* general styles */
+
+
+input {
+  background: white;
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+input[type="submit"], input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  border: 1px solid lightgreen;
+  color: green;
+}
+
+input[type="submit"]:hover {
+  background: lightgreen;
+  color: white;
+}
   
+/* header */
+
+header {
+  background-color: #3B3B6D;
+  color: white;
+  width: 100%;
+}
+
   /* main menu */
   
-  .main-menu {
-     list-style: none;
-  }
-  
+.main-menu {
+  padding: 0;
+}
   .main-menu li {
      display: inline;
   }
-  
+   
   .main-menu li a {
-      margin-right:-10px;
-      padding: 10px;
       display: inline-block;
       color: white;
-      text-decoration: none;
       border-left: 2px solid white;
-  }
-  
-  .main-menu li:last-child a {
-      margin-right: 0;
   }
   
   .main-menu li a:hover {
@@ -39,36 +102,36 @@ header {
   
   /* logo */
   
-  
-  header figure img {
-    float:left;
+  header figure {
+    padding: 0;
+    padding-top: 20px;
   }
-  
+
   header figure figcaption {
-    padding: 20px 10px;
-    font-size: 1.25em;
-    float: right;
+     font-size: 1.25em; 
+     font-weight: bold;
+     margin-top: 5px;
   }
-  
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+
+  header figure .logo {
+    max-width: 75px;
   }
   
   /* form*/
   
   header form {
-    text-align: right;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  header form input {
+    margin-bottom: 5px;
   }
   
-  header form input {
-    margin: 5px;
-  }
   header form a {
-    text-decoration: none;
     color: grey;
-    font-size: 0.5em;
+    font-size: 0.9em;
+    padding-left: 5px;
   }
   
   header form a:hover {
@@ -89,11 +152,11 @@ header {
   }
   
   .overlay-sign-up-form .popup {
-    width: 400px;
+    width: 360px;
     border: 1px solid lightgrey;
     padding: 10px;
     position: relative;
-    top: 150px;
+    top: 75px;
     margin: auto;
     background-color: white;
   }
@@ -104,17 +167,16 @@ header {
     margin: 10px;
   }
   .overlay-sign-up-form .popup input {
-    margin: 5px;
-    margin-left: 50px;
+    margin: 5px 0px;
   }
   
   .overlay-sign-up-form .popup label {
-    margin-left: 50px;
+    margin: 5px 10px;
   }
   
-  .overlay-sign-up-form .popup label[for="subscribe-field"] {
+  /* .overlay-sign-up-form .popup label[for="subscribe-field"] {
     margin-left: 0;
-  }
+  } */
   
   .overlay-sign-up-form .popup input[type="button"] {
     background: none;
@@ -134,18 +196,19 @@ header {
   
   
   .overlay-restore-password-form .popup {
-    width: 400px;
+    width: 360px;
     border: 1px solid lightgrey;
-    padding: 20px;
+    padding: 10px;
     position: relative;
-    top: 150px;
+    top: 75px;
     margin: auto;
     background-color: white;
-    text-align: left;
+    text-align: center;
   }
   
   .overlay-restore-password-form .popup input[type="button"] {
     background: none;
+    padding: 5px;
     border: none;
     font-size: 1.5em;
     position: absolute;
@@ -153,31 +216,64 @@ header {
     right: 5px;
     cursor: pointer;
   }
+ 
   
   .overlay-restore-password-form .popup label, .overlay-restore-password-form .popup input[type="email"] {
-    padding: 5px;
+    margin: 5px 0px;
+  } 
+
+  .overlay-restore-password-form .popup h1 {
+    font-size: 1.25em;
+  }
+  
+  /* side menu */
+
+  .side-menu, .side-menu li {
+    padding: 0;
+    margin-left: -10px;
+  }
+ 
+  .side-menu a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      display: block;
+      padding: 10px 0;
+      border-bottom: 2px solid #3B3B6D;
+  }
+  
+  .side-menu a:hover {
+      background-color: #77a6f7;
+      transform: scale(1.1); 
+  }
+  
+  
+  /* main content */
+  
+  .content-box {
+    margin-bottom: 100px;
+  }
+  
+  .content-box h1 {
+    font-size: 3em;
     margin: 10px;
-    margin-left: 0;
-    padding-left: 0;
   }
   
-  /* social icons */
-  .container-social {
-    position: fixed;
-    margin: 0;
-    padding: 10px;
-    top: 150px;
-    right: 5px;
-    border-right: 5px dotted lightgrey;
+  .content-box h2 {
+    font-size: 2em;
+    margin: 10px;
   }
   
-  .container-social ul {
-    margin: 0;
-    list-style: none;
+  .content-box p {
+    margin: 5px;
+    padding: 5px;
+    line-height: 1.2em;
   }
   
+  /*social icons*/
+
   .social {
-    display: inline-block;
+    display: block;
     height: 48px;
     width: 48px;
     border-radius: 50%;
@@ -206,69 +302,27 @@ header {
     background-position: -240px -48px;
     transform: scale(1.1); 
   }
-  
-  /* side menu */
-  
-  .side-menu {
-      padding: 0;
-      width: 200px;
-      position: absolute;
-  }
-  
-  .side-menu ul {
-    list-style: none;
-  }
-  
-  .side-menu a {
-      text-decoration: none;
-      color: #000000;
-      font-weight: bold;
-      display: block;
-      padding: 10px 15px;
-      border-bottom: 2px solid #3B3B6D;
-  }
-  
-  .side-menu a:hover {
-      background-color: #77a6f7;
-  }
-  
-  
-  /* main content */
-  
-  .content-box {
-    padding: 25px;
-    padding-left: 250px;
-    margin-right: 100px;
-    margin-bottom: 100px;
-  }
-  
-  .content-box h1 {
-    font-size: 3em;
-    margin: 10px;
-  }
-  
-  .content-box h2 {
-    font-size: 2em;
-    margin: 10px;
-  }
-  
-  .content-box p {
-    margin: 5px;
-    padding: 5px;
-    line-height: 1.2em;
-  }
-  
-  
+
   /*footer*/
-  
+
   footer {
     background-color: #3B3B6D;
-    height: 60px;
+    max-height: 100px;
     color: white;
     width: 100%;
-    padding: 20px 0;
-    font-size: 1.5em;
+    font-size: 0.75em;
     position: fixed;
     bottom: 0;
-    text-align: center;
+    opacity: 0.75;
+  }
+
+  footer:hover {
+    opacity: 1;
+  }
+
+  footer .col-9 {
+    border-left: 1px solid lightgrey;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 40px;
   }

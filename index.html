@@ -8,49 +8,70 @@
     <meta charset="utf-8">
     <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum.">
     <meta name="keywords" content="lorem, ipsum, dolor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <title>Lorem Ipsum</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
 
   <body>
-    <header class="clearfix">
-      
-      <ul class="main-menu">
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Lorem</a></li>
+    <header class="row">
+    
+      <div class="col-4">
+        <ul class="main-menu row">
+          <li><a href="#" class="col-3">Lorem</a></li>
+          <li><a href="#" class="col-3">Lorem</a></li>
+          <li><a href="#" class="col-3">Lorem</a></li>
+          <li><a href="#" class="col-3">Lorem</a></li> 
       </ul>
+    
+    </div>
+      
 
-      <figure class="clearfix">
-        <img src="logo.png" сlass="logo" width="100">
-        <figcaption>
-          <h1>Company
-          <br>
-          Name</h1>
+      <figure class="col-2">
+        <row>
+          <img src="logo.png" class="logo col-5" alt="Company logo">
+        <figcaption class="col-7">
+          <h1>Company Name</h1>
         </figcaption>
+      </row>
+       
       </figure>
 
-      <form action="" method="post">
-        <label for="login-field">login</label>
-        <input type="text" id="login-field" name="login" title="Please enter your login" placeholder="Your login" required>
-        <br>
-        <label for="password-field">password</label>
-        <input type="password" id="password-field" name="password" title="Please enter your password" placeholder="Your password" required>
-        <br>
-        <a href="#" onclick="openRestorePasswordForm()">Forgot your password?</a>
-        <span>|</span>
-        <a href="#" onclick="openSignUpForm()">Sign up</a>
+      <form action="" method="post" class="col-6">
+      <div class="row">
+        <div class="col-5">
+         
+          <input type="text"  id="login-field" name="login" title="Please enter your login" placeholder="Your login" required>
+          
+          
+
+        </div>
+
+        <div class="col-5">
+          
+          <input type="password" id="password-field" name="password" title="Please enter your password" placeholder="Your password" required>
+
+          <a href="#" onclick="openRestorePasswordForm()">Forgot password?</a>
+
+        </div>
+      
+      
+      
+      <div class="col-2">
         <input type="submit" value="Log in">
+        <a href="#" onclick="openSignUpForm()">Sign up</a>
+      </div>
+      </div>
       </form>
   
     </header>
     
     <div class="overlay overlay-sign-up-form">
-      <div class="popup">
-      <h1>New here? Please sign up!</h1>
-      <input type="button" onclick="closeSignUpForm()" value="x">
+      <div class="popup col-4">
+          <h1>New here? Please sign up!</h1>
+          <input type="button" onclick="closeSignUpForm()" value="x">
       <hr>
       <form action="" method="post">
             <label for="login-field">Your login:</label>
@@ -59,7 +80,7 @@
             <br>
             <label for="password-field">Password:</label>
             <br>
-            <input type="password" name="password" id="password-field" placeholder="Your password" title="Must contain at least 1 uppercase letter & 1 symbol" required>
+            <input type="password" name="password" id="password-field" placeholder="Your password" title="Must contain at least 1 uppercase letter & 1 number" required>
             <br>
             <label for="password-field">Repeat password:</label>
             <br>
@@ -74,23 +95,19 @@
   </div>
   
   <div class="overlay overlay-restore-password-form">
-    <div class="popup">
-      <label for="email-field">Please enter you e-mail here, and we'll send you the password reset link!</label>
+    <div class="popup col-4">
+      <h1>Forgot your password?</h1>
       <input type="button" onclick="closeRestorePasswordForm()" value="x">
+      <hr>
+      <label for="email-field">Please enter you e-mail here, and we'll send you the password reset link!</label>
       <br>
       <input type="email" id="email-field" placeholder="Please enter your e-mail" title="Please enter your e-mail">
+      <input type="submit" value="Confirm reset">
     </div> 
   </div>
   
-    <div class="container-social">
-      <ul>
-        <li><a href="#" class="social social-fb"></a></li>
-        <li><a href="#" class="social social-tw"></a></li>
-        <li><a href="#" class="social social-inst"></a></li>
-      </ul>
-    </div>
     
-    <div class="side-menu">
+    <div class="side-menu col-3">
       <ul>
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
@@ -99,10 +116,17 @@
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
       </ul>
     </div>
     
-    <div class="content-box">
+    <div class="content-box col-9">
       <h1>Lorem ipsum?</h1>
        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum. Nullam faucibus mauris eget est lobortis, et eleifend metus volutpat. Quisque id mi et magna feugiat gravida. Quisque lacinia turpis laoreet tellus imperdiet suscipit. Nullam dignissim cursus ornare. Etiam id tempor enim. Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
        <hr>
@@ -114,7 +138,17 @@
     </div>
     
     <footer>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin.  
+            <ul class="col-2 container-social">
+              <div class="row">
+                <li class="col-4"><a href="#" class="social social-fb"></a></li>
+              <li class="col-4"><a href="#" class="social social-tw"></a></li>
+              <li class="col-4"><a href="#" class="social social-inst"></a></li>
+            </div>
+            </ul>
+            <div class="col-9">
+              <p>Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
+              
+            </div>
     </footer>
     <script src="script.js"></script>
     
