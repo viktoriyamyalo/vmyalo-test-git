@@ -27,6 +27,12 @@ body {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+
+  .popup {
+    position: absolute;
+    left: 35%;
+    top: 75px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -39,6 +45,14 @@ body {
   footer .col-9 {
     padding: 0;
   }
+
+  .popup {
+    position: absolute;
+    left: 10px;
+    top: 75px;
+    max-width: 300px;
+  }
+
 }
 
 .row::after {
@@ -155,9 +169,6 @@ header {
     width: 360px;
     border: 1px solid lightgrey;
     padding: 10px;
-    position: relative;
-    top: 75px;
-    margin: auto;
     background-color: white;
   }
   
@@ -174,9 +185,6 @@ header {
     margin: 5px 10px;
   }
   
-  /* .overlay-sign-up-form .popup label[for="subscribe-field"] {
-    margin-left: 0;
-  } */
   
   .overlay-sign-up-form .popup input[type="button"] {
     background: none;
@@ -199,9 +207,6 @@ header {
     width: 360px;
     border: 1px solid lightgrey;
     padding: 10px;
-    position: relative;
-    top: 75px;
-    margin: auto;
     background-color: white;
     text-align: center;
   }
