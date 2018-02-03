@@ -32,11 +32,10 @@ body {
    position: absolute;
    left: 50%;
    top: 50%;
-   margin-left: -180px;
-   margin-top: -180px;
+   transform: translate(-50%, -50%);
   }
 
-  footer .col-9 p {
+  footer .col-9  {
     margin-top: 30px;
   }
 }
@@ -101,8 +100,18 @@ header {
   width: 100%;
 }
 
+/* burger button */
+#burger {
+  display: inline-block;
+  margin: 10px;
+  min-height: 50px;
+  min-width: 50px;
+  background: white;
+}
+
   /* main menu */
   
+
 .main-menu {
   padding: 0;
 }
@@ -114,6 +123,7 @@ header {
       display: inline-block;
       color: white;
       border-left: 2px solid white;
+      transition: 0.5s;
   }
   
   .main-menu li a:hover {
@@ -240,6 +250,21 @@ header {
   
   /* side menu */
 
+  #sidebar {
+    position: absolute;
+    z-index: 1;
+    background: turquoise;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+
+  #sidebar.sidebar-hidden {
+    width: 0px;
+  }
+
+
   .side-menu, .side-menu li {
     padding: 0;
     margin-left: -10px;
@@ -261,9 +286,15 @@ header {
   
   
   /* main content */
+
+  .main-sidebar-visible {
+    margin-left: 25%; 
+  }
   
   .content-box {
-    margin-bottom: 100px;
+    margin-bottom: 100px; 
+    transition: margin-left 1s;
+    padding: 20px;
   }
   
   .content-box h1 {
@@ -326,6 +357,7 @@ header {
     position: fixed;
     bottom: 0;
     opacity: 0.75;
+    z-index: 2;
   }
 
   footer:hover {
