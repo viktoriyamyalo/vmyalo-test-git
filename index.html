@@ -17,10 +17,8 @@
   <body>
     <header class="row">
     
-    <div class="col-1">
-      <a href="javascript:void(0)" id="burger" onclick="toggleSidebar()"></a>
-    </div>
-    <div class="col-3">
+    
+    <div class="col-4">
         <ul class="main-menu row">
           <li><a href="#" class="col-3">Lorem</a></li>
           <li><a href="#" class="col-3">Lorem</a></li>
@@ -102,38 +100,33 @@
     </div> 
   </div>
   
-    
+    <div class="container"><div class="row">
     <div class="side-menu col-3 sidebar-hidden" id="sidebar">
+        <a href="javascript:void(0)" id="burger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
       <ul>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a><form>
-            Font size (between 8 and 24px)
-            <input type="number" min="8" max="24" step="1" id="fontSizeInput" onchange="changeFontSize(this.value)">
-          </form></a> </li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#"><select onchange="changeBackgroundColor(this.value)">
-            <option value="#AFCBF3">#AFCBF3</option>
-            <option value="#6195C5">#6195C5</option>
-            <option value="#EECD86">#EECD86</option>
-            <option value="#E49E7A">#E49E7A</option>
-            <option value="#E39183">#E39183</option>
+        <li><label for="font-size-field">Please choose font size</label>
+            <input type="number" min="8" max="24" step="1" id="font-size-field" onchange="changeFontSize(this.value)">
+          </li>
+        <li><label for="background-color-field">Please select background color</label>
+          <select onchange="changeBackgroundColor(this.value)" id="background-color-field">
+            <option value="#AFCBF3">Blue Perano</option>
+            <option value="#6195C5">Blue Danube</option>
+            <option value="#EECD86">Flax</option>
+            <option value="#E49E7A">Yellow Orange</option>
+            <option value="#E39183">Tonys Pink</option>
+            <option value="#FFFFFF">White</option>
         </select></a></li>
-        <li><a href="#"><select onchange="changeFontFamily(this.value)">
+        <li><label for="font-family-field">Please select font family</label><select onchange="changeFontFamily(this.value)" id="font-family-field">
             <option value="Georgia, serif">Georgia</option>
             <option value="Arial, Helvetica, sans-serif">Arial</option>
             <option value="'Courier New', Courier, monospace">Courier New</option>
             <option value="'Lucida Console', Monaco, monospace">Lucida Console</option>
-        </select></a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#" onclick="deleteLastParagraph(event)">Delete the last paragraph on page</a></li>
+        </select></li>
+        <li><span onclick="deleteLastParagraph(event)">Delete the last paragraph on page<button>Delete!</button></span></li>
       </ul>
     </div>
     
@@ -147,6 +140,8 @@
        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum. Nullam faucibus mauris eget est lobortis, et eleifend metus volutpat. Quisque id mi et magna feugiat gravida. Quisque lacinia turpis laoreet tellus imperdiet suscipit. Nullam dignissim cursus ornare. Etiam id tempor enim. Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.</p>
    
     </div>
+  </div>
+</div>
     
     <footer class="row">
       

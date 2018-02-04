@@ -31,7 +31,7 @@ function changeFontSize(num) {
 }
 
 function changeBackgroundColor(color) {
-  document.getElementById('main').style.backgroundColor = color;
+  document.documentElement.style.backgroundColor = color;
 }
 
 function changeFontFamily(font) {
@@ -43,9 +43,16 @@ function changeFontFamily(font) {
 
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('sidebar-hidden');
-  document.getElementById('main').classList.toggle('main-sidebar-visible');
 }
 
-/* making the page responsive */
 
-document.getElementById('sidebar').style.marginTop = document.getElementsByTagName('header')[0].offsetHeight + 'px';
+/* var selectColorOptions = document.querySelectorAll('option');
+Array.prototype.forEach.call(selectColorOptions, function(option) {
+  option.style.backgroundColor = `${option.value}`;
+}); */
+/* 
+var selectFontFamilyOptions = document.querySelectorAll('#font-family-field option');
+
+Array.prototype.forEach.call(selectFontFamilyOptions, function(option) {
+  option.style.fontFamily = `${option.value}`;
+}); */
