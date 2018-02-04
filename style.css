@@ -329,14 +329,21 @@ header {
   
   /* main content */
   
-#sidebar.sidebar-hidden + .content-box {
+@media only screen and (min-width: 728px) {
+  #sidebar.sidebar-hidden + .content-box {
   margin-left: 80px;
+}
 }
 .content-box {
     margin-bottom: 100px; 
     transition: margin-left 1s;
     padding: 20px;
+}
+
+@media only screen and (min-width: 728px) {
+  .content-box {
     margin-left: 25%;
+  }
 }
   
   .content-box h1 {
