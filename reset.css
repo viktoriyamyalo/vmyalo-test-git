@@ -15,6 +15,6 @@ a {
 	text-decoration: none;
 }
 
-:focus, :active, button {
+:focus, :active {
 	outline: 0;
 }

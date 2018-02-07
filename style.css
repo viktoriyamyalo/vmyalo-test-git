@@ -317,6 +317,12 @@ header {
     border-bottom: 2px solid #3B3B6D;
   }
 
+  @media only screen and (max-width: 728px) {
+    #sidebar li {
+      padding: 15px;
+    }
+  }
+
   #sidebar li:first-child {
     border-top: 2px double #3B3B6D;
   }
