@@ -2,9 +2,16 @@
 <html lang="en">
 
   <head>
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    
+
+    <!-- TODO: expolore bootstrap later -->
+  
+
     <meta charset="utf-8">
     <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros tortor, ultrices vel bibendum nec, dignissim ut diam. Donec congue ac diam et sollicitudin. Integer in nunc ut massa posuere rutrum.">
     <meta name="keywords" content="lorem, ipsum, dolor">
@@ -35,84 +42,91 @@
           </figcaption>
        </figure>
 
-      <form action="#" method="post" class="col-6">
+      <form action="#" method="post" class="col-6" id="auth_form">
       <div class="row">
 
         <div class="col-5"> 
-          <input type="text"  id="login-field" name="login" title="Please enter your login" placeholder="Your login" required>
+          <input type="email"  id="auth_login" name="email" title="Please enter your e-mail" placeholder="Your e-mail" required>
         </div>
 
         <div class="col-5">
           
-          <input type="password" id="password-field" name="password" title="Please enter your password" placeholder="Your password" required>
+          <input type="password" id="auth_password" name="password" title="Please enter your password" placeholder="Your password" required>
 
-          <a href="#" onclick="openRestorePasswordForm()">Forgot password?</a>
+          <a href="#" id="open_restore">Forgot password?</a>
 
         </div>
         
         <div class="col-2">
-        <input type="submit" value="Log in">
-        <a href="#" onclick="openSignUpForm()">Sign up</a>
+        <input type="submit" value="Log in" id="auth">
+        
+        <a href="#" id="open_register">Register</a>
         </div>
       </div>
 
-      </form>
+      </form> 
+
+      <div class="hidden col-6" id="welcome_container">
+        <div class="row">
+        <p id="user_name" class="col-5"></p>
+        <input type="submit" value="Log out" id="logout" class="col-2">
+      </div>
+      </div>
   
     </header>
     
-    <div class="overlay overlay-sign-up-form">
+    <div class="overlay hidden" id="overlay_register">
       <div class="popup col-4">
-          <h1>New here? Please sign up!</h1>
-          <input type="button" onclick="closeSignUpForm()" value="x">
+          <h1>New here? Please register!</h1>
+          <input type="button" id="close_register" value="x">
       <hr>
       <form action="#" method="post">
-            <label for="signup-login-field">Your login:</label>
+            <label for="register_login">Your login:</label>
             <br>
-            <input type="text" name="login" id="signup-login-field" placeholder="Your login" title="Can contain letters, numbers, underscores, or dashes" required>
+            <input type="email" name="email" id="register_login" placeholder="Your login" required>
             <br>
-            <label for="signup-password-field">Password:</label>
+            <label for="register_password">Password:</label>
             <br>
-            <input type="password" name="password" id="signup-password-field" placeholder="Your password" title="Must contain at least 1 uppercase letter & 1 number" required>
+            <input type="password" name="password" id="register_password" placeholder="Your password" required>
+            
+            <label for="register_confirmation">Repeat password:</label>
             <br>
-            <label for="password-field">Repeat password:</label>
+            <input type="password" name="repeat-password" id="register_confirmation" placeholder="Please re-enter your password" required>
             <br>
-            <input type="password" name="repeat-password" id="repeat-password-field" placeholder="Please re-enter your password" required>
-            <br>
-            <input type="checkbox" name="subscribe" id="subscribe-field" checked>
-            <label for="subscribe-field">Subscribe to our newsletter</label>
-            <br>
-            <input type="submit" value="Sign Up">
+            <input type="submit" value="Register" id="register">
         </form>
+
+        
     </div>
   </div>
   
-  <div class="overlay overlay-restore-password-form">
+  <div class="overlay hidden" id="overlay_restore">
     <div class="popup col-4">
       <h1>Forgot your password?</h1>
       <form action="#" method="post">
-      <input type="button" onclick="closeRestorePasswordForm()" value="x">
+      <input type="button" id="close-restore" value="x">
       <hr>
-      <label for="email-field">Please enter you e-mail here, and we'll send you the password reset link!</label>
+      <label for="restore_email">Please enter you e-mail here, and we'll send you the password reset link!</label>
       <br>
-      <input type="email" id="email-field" placeholder="Please enter your e-mail" title="Please enter your e-mail">
-      <input type="submit" value="Confirm reset">
+      <input type="email" id="restore_email" placeholder="Please enter your e-mail" title="Please enter your e-mail">
+      <input type="submit" value="Confirm reset" id="restore">
       </form>
     </div> 
   </div>
   
     <div class="container"><div class="row">
-    <div class="side-menu col-3 sidebar-hidden" id="sidebar">
-        <a href="javascript:void(0)" id="burger" onclick="toggleSidebar()">
+    <div class="side-menu col-3 sidebar-hidden hidden" id="sidebar">
+        <a href="javascript:void(0)" id="burger">
             <span></span>
             <span></span>
             <span></span>
           </a>
       <ul>
-        <li><label for="font-size-field">Please choose font size</label>
-            <input type="number" min="8" max="24" step="1" id="font-size-field" onchange="changeFontSize(this.value)">
+        <li><label for="font_size">Please choose font size</label>
+            <input type="number" min="8" max="24" step="1" id="font_size">
           </li>
-        <li><label for="background-color-field">Please select background color</label>
-          <select onchange="changeBackgroundColor(this.value)" id="background-color-field">
+        <li><label for="background_color">Please select background color</label>
+          <select id="background_color">
             <option value="#AFCBF3">Blue Perano</option>
             <option value="#6195C5">Blue Danube</option>
             <option value="#EECD86">Flax</option>
@@ -120,13 +134,14 @@
             <option value="#E39183">Tonys Pink</option>
             <option value="#FFFFFF">White (default)</option>
         </select></a></li>
-        <li><label for="font-family-field">Please select font family</label><select onchange="changeFontFamily(this.value)" id="font-family-field">
+        <li><label for="font_family">Please select font family</label>
+          <select onchange="changeFontFamily(this.value)" id="font_family">
             <option value="Georgia, serif">Georgia</option>
             <option value="'Courier New', Courier, monospace">Courier New</option>
             <option value="'Times New Roman', Times, serif">Times New Roman</option>
             <option value="Arial, Helvetica, sans-serif">Arial (default)</option>
         </select></li>
-        <li><span onclick="deleteLastParagraph(event)">Delete the last paragraph on page<button>Delete!</button></span></li>
+        <li><span id="delete_paragraph">Delete the last paragraph on page<button>Delete!</button></span></li>
       </ul>
     </div>
     
@@ -157,9 +172,10 @@
             
             <div class="col-9">
               Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.
-              
             </div>
     </footer>
+
+
     <script src="script.js"></script>
     
   </body>

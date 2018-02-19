@@ -178,6 +178,26 @@ header {
   header form a:hover {
     color: white;
   }
+
+  /*welcome_container*/
+
+  #logout {
+    background-color: tomato;
+    border: none;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  #logout:hover {
+    background-color: white;
+    color: tomato;
+    border: none;
+  }
+
+  #user_name {
+    margin-left: 10px;
+  }
+
   
   /* sign up popup */
   
@@ -189,10 +209,9 @@ header {
     left: 0;
     background: rgba(152,152,152,0.75);
     z-index: 10;
-    display: none;
   }
   
-  .overlay-sign-up-form .popup {
+  #overlay_register .popup {
     width: 360px;
     border: 1px solid lightgrey;
     padding: 10px;
@@ -200,21 +219,21 @@ header {
 
   }
   
-  .overlay-sign-up-form .popup h1 {
+  #overlay_register .popup h1 {
     text-align: center;
     font-size: 1.25em;
     margin: 10px;
   }
-  .overlay-sign-up-form .popup input {
+  #overlay_register .popup input {
     margin: 5px 0px;
   }
   
-  .overlay-sign-up-form .popup label {
+  #overlay_register .popup label {
     margin: 5px 10px;
   }
   
   
-  .overlay-sign-up-form .popup input[type="button"] {
+  #overlay_register .popup input[type="button"] {
     background: none;
     border: none;
     font-size: 1.5em;
@@ -224,14 +243,14 @@ header {
     cursor: pointer;
   }
   
-  .overlay-sign-up-form .popup input[type="checkbox"], .popup input[type="submit"] {
+  #overlay_register .popup input[type="checkbox"], .popup input[type="submit"] {
     cursor: pointer;
   }
   
   /* restore password popup */
   
   
-  .overlay-restore-password-form .popup {
+  #overlay_restore .popup {
     width: 360px;
     border: 1px solid lightgrey;
     padding: 10px;
@@ -239,7 +258,7 @@ header {
     text-align: center;
   }
   
-  .overlay-restore-password-form .popup input[type="button"] {
+  #overlay_restore .popup input[type="button"] {
     background: none;
     padding: 5px;
     border: none;
@@ -251,11 +270,11 @@ header {
   }
  
   
-  .overlay-restore-password-form .popup label, .overlay-restore-password-form .popup input[type="email"] {
+  #overlay_restore .popup label, #overlay_restore .popup input[type="email"] {
     margin: 5px 0px;
   } 
 
-  .overlay-restore-password-form .popup h1 {
+  #overlay_restore .popup h1 {
     font-size: 1.25em;
   }
 
@@ -423,4 +442,10 @@ header {
     border-left: 1px solid lightgrey;
     margin: 5px;
     padding: 5px;
+  }
+
+  /* hide elements  */
+
+  .hidden {
+    display: none;
   }
