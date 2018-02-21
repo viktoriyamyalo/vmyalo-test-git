@@ -30,7 +30,9 @@ function closeRestorePasswordForm() {
 function deleteLastParagraph(event) {
   event.preventDefault();
   const paragraphs = document.querySelectorAll('#main p');
+  if(paragraphs.length > 0) {
   paragraphs[paragraphs.length - 1].remove();
+  }
 }
 
 function changeFontSize() {
