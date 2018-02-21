@@ -22,6 +22,7 @@
   </head>
 
   <body>
+  
     <header class="row">
     
     
@@ -35,21 +36,21 @@
     </div>
       
 
-      <figure class="col-2 row">
+      <figure class="col-3 row">
           <img src="logo.png" class="logo col-5" alt="Company logo">
         <figcaption class="col-7">
           <h1>Company Name</h1>
           </figcaption>
        </figure>
 
-      <form action="#" method="post" class="col-6" id="auth_form">
+      <form action="#" method="post" class="col-5" id="auth_form">
       <div class="row">
 
-        <div class="col-5"> 
+        <div class="col-4"> 
           <input type="email"  id="auth_login" name="email" title="Please enter your e-mail" placeholder="Your e-mail" required>
         </div>
 
-        <div class="col-5">
+        <div class="col-4">
           
           <input type="password" id="auth_password" name="password" title="Please enter your password" placeholder="Your password" required>
 
@@ -57,7 +58,7 @@
 
         </div>
         
-        <div class="col-2">
+        <div class="col-4">
         <input type="submit" value="Log in" id="auth">
         
         <a href="#" id="open_register">Register</a>
@@ -66,11 +67,14 @@
 
       </form> 
 
-      <div class="hidden col-6" id="welcome_container">
-        <div class="row">
-        <p id="user_name" class="col-5"></p>
-        <input type="submit" value="Log out" id="logout" class="col-2">
-      </div>
+      <div class="hidden col-5 row" id="welcome_container">
+          <div class="col-6">
+        <p id="user_name"></p>
+        </div>
+        <div class="col-6">
+        <input type="submit" value="Log out" id="logout">
+        </div>
+
       </div>
   
     </header>
@@ -81,9 +85,13 @@
           <input type="button" id="close_register" value="x">
       <hr>
       <form action="#" method="post">
-            <label for="register_login">Your login:</label>
+            <label for="register_username">Your username:</label>
             <br>
-            <input type="email" name="email" id="register_login" placeholder="Your login" required>
+            <input type="text" name="username" id="register_username" placeholder="Your username" required>
+            <br>
+            <label for="register_login">Your email:</label>
+            <br>
+            <input type="email" name="email" id="register_login" placeholder="Your email" required>
             <br>
             <label for="register_password">Password:</label>
             <br>
@@ -123,7 +131,7 @@
           </a>
       <ul>
         <li><label for="font_size">Please choose font size</label>
-            <input type="number" min="8" max="24" step="1" id="font_size">
+            <input type="number" min="8" max="24" step="1" id="font_size" onkeydown="return false">
           </li>
         <li><label for="background_color">Please select background color</label>
           <select id="background_color">
@@ -160,7 +168,7 @@
     
     <footer class="row">
       
-          <div class="col-2 container-social">
+          <div class="col-4 container-social">
             <ul class="row">
                 <li class="col-4"><a href="#" class="social social-fb"></a></li>
               <li class="col-4"><a href="#" class="social social-tw"></a></li>
@@ -170,7 +178,7 @@
            
 
             
-            <div class="col-9">
+            <div class="col-8">
               Mauris dapibus, urna vel aliquam cursus, urna arcu suscipit sem, sed dictum risus odio et erat. Integer sollicitudin neque vitae ullamcorper fringilla. Morbi sem mi, molestie a laoreet ut, blandit non risus. Aenean pulvinar mi sed nulla egestas lobortis. Etiam finibus nisl est, id semper dui luctus quis.
             </div>
     </footer>

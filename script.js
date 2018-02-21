@@ -29,13 +29,13 @@ function closeRestorePasswordForm() {
 
 function deleteLastParagraph(event) {
   event.preventDefault();
-  var paragraphs = document.getElementsByTagName('p');
+  const paragraphs = document.querySelectorAll('#main p');
   paragraphs[paragraphs.length - 1].remove();
 }
 
 function changeFontSize() {
   const num = fontSizeField.value;
-  const paragraphs = document.getElementsByTagName('p');
+  const paragraphs = document.querySelectorAll('#main p');
   Array.prototype.forEach.call(paragraphs, function(p) {
     p.style.fontSize = num + 'px'
   });
@@ -48,7 +48,7 @@ function changeBackgroundColor() {
 
 function changeFontFamily() {
   const font = fontFamilyField.value;
-  const paragraphs = document.getElementsByTagName('p');
+  const paragraphs = document.querySelectorAll('#main p');
   Array.prototype.forEach.call(paragraphs, function(p) {
     p.style.fontFamily = font;
   });
@@ -102,9 +102,11 @@ deleteParagraphButton.addEventListener('click', deleteLastParagraph);
 const loginEmailField = document.getElementById('auth_login');
 const loginPasswordField = document.getElementById('auth_password');
 const loginButton = document.getElementById('auth');
+const loginForm = document.getElementById('auth_form');
 const signupEmailField = document.getElementById('register_login');
 const signupPasswordField = document.getElementById('register_password');
 const repeatPasswordField = document.getElementById('register_confirmation');
+const userNameField = document.getElementById('register_username');
 const signupButton = document.getElementById('register');
 const logoutButton = document.getElementById('logout');
 const welcomeContainer = document.getElementById('welcome_container');
@@ -113,10 +115,13 @@ const userName = document.getElementById('user_name');
 const sidebar = document.getElementById('sidebar');
 const restoreEmailField = document.getElementById('restore_email');
 const restoreButton = document.getElementById('restore');
+const overlayRegister = document.getElementById('overlay_register');
+const overlayRestore = document.getElementById('overlay_restore');
 
-// overlays
-// const overlayRegisterForm = document.querySelector('.overlay-sign-up-form');
-// const overlayRestorePasswordForm = document.querySelector('.overlay-restore-password-form');
+function cleanUp(elem) {
+  elem.querySelector('form').reset();
+  elem.classList.add('hidden');
+}
 
 loginButton.addEventListener('click', e => {
   e.preventDefault();
@@ -124,30 +129,28 @@ loginButton.addEventListener('click', e => {
   const password = loginPasswordField.value;
   const auth = firebase.auth();
 
-  const promise = auth.signInWithEmailAndPassword(email, password);
-  promise.catch(err => console.log(err.message));
+  auth.signInWithEmailAndPassword(email, password).catch(err => console.log(err.message));
 })
 
 signupButton.addEventListener('click', e => {
   
+  e.preventDefault();
   const email = signupEmailField.value;
   const password = signupPasswordField.value;
   const repeat = repeatPasswordField.value;
-  const auth = firebase.auth();
+  const username = userNameField.value;
+
 
   if(password == repeat) {
-    const promise = auth.createUserWithEmailAndPassword(email, password);
-
-     setTimeout( _ => overlayRegisterForm.style.display = "none", 1000);
-
-  // signupEmailField.value = "";
-  // signupPasswordField.value = "";
-
-auth.signInWithEmailAndPassword(email, password);
-  promise.catch(err => console.log(err.message));
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(firebaseUser => firebaseUser.updateProfile({displayName:username}))
+    .then(() => userName.innerHTML = `Welcome, ${username}!`)
+    .then(cleanUp(overlayRegister))
+    .catch(e => console.log(e.message));
+    
   } else {
-    console.log(`Passwords don't match`);
-  }  
+    console.log("Passwords don't match")
+  } 
 });
 
 logoutButton.addEventListener('click', e => {
@@ -156,18 +159,18 @@ logoutButton.addEventListener('click', e => {
 
 restoreButton.addEventListener('click', e => {
   const email = restoreEmailField.value;
-  const promise = firebase.auth().sendPasswordResetEmail(email);
-  promise
-  .then(console.log('Restore link sent'))
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(cleanUp(overlayRestore))
   .catch(e => console.log(e.message));
   
-})
+});
+
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser);
     signInForm.classList.add('hidden');
-    userName.innerHTML = `Welcome, ${firebaseUser.email}!`;
+    userName.innerHTML = `Welcome, ${firebaseUser.displayName}!`;
     welcomeContainer.classList.remove('hidden');
     sidebar.classList.remove('hidden');
 
@@ -179,6 +182,26 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     
   }
 });
+
+// function updateUser() {
+//   firebase.auth().onAuthStateChanged(firebaseUser => {
+//   if(firebaseUser) {
+//     console.log(firebaseUser);
+//     signInForm.classList.add('hidden');
+//     userName.innerHTML = `Welcome, ${firebaseUser.displayName}!`;
+//     welcomeContainer.classList.remove('hidden');
+//     sidebar.classList.remove('hidden');
+
+//   } else {
+//     console.log('Not logged in');
+//     welcomeContainer.classList.add('hidden');
+//     sidebar.classList.add('hidden');
+//     signInForm.classList.remove('hidden');
+    
+//   }
+// });
+// }
+
 }());
 
 

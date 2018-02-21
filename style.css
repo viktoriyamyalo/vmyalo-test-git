@@ -151,7 +151,7 @@ header {
   header figure figcaption {
      font-size: 1.25em; 
      font-weight: bold;
-     margin-top: 5px;
+     margin-top: 15px;
   }
 
   header figure .logo {
@@ -172,7 +172,6 @@ header {
   header form a {
     color: grey;
     font-size: 0.9em;
-    padding-left: 5px;
   }
   
   header form a:hover {
@@ -181,11 +180,18 @@ header {
 
   /*welcome_container*/
 
+  #welcome_container {
+    margin-top: 10px;
+  }
+
+  #user_name {
+    margin-top:5px;
+  }
+
   #logout {
     background-color: tomato;
+    color: white;
     border: none;
-    margin-left: 10px;
-    display: inline-block;
   }
 
   #logout:hover {
@@ -194,9 +200,6 @@ header {
     border: none;
   }
 
-  #user_name {
-    margin-left: 10px;
-  }
 
   
   /* sign up popup */
