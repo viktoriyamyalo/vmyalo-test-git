@@ -80,7 +80,7 @@
     </header>
     
     <div class="overlay hidden" id="overlay_register">
-      <div class="popup col-4">
+      <div class="popup col-4" id="container_register">
           <h1>New here? Please register!</h1>
           <input type="button" id="close_register" value="x">
       <hr>
@@ -93,7 +93,7 @@
             <br>
             <input type="email" name="email" id="register_login" placeholder="Your email" required>
             <br>
-            <label for="register_password">Password:</label>
+            <label for="register_password">Password <span style="font-size: 0.75em; color: green; vertical-align: super">*at least 5 characters</span></label>
             <br>
             <input type="password" name="password" id="register_password" placeholder="Your password" required>
             
@@ -109,7 +109,7 @@
   </div>
   
   <div class="overlay hidden" id="overlay_restore">
-    <div class="popup col-4">
+    <div class="popup col-4" id="container_restore">
       <h1>Forgot your password?</h1>
       <form action="#" method="post">
       <input type="button" id="close-restore" value="x">

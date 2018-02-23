@@ -118,6 +118,9 @@ const restoreEmailField = document.getElementById('restore_email');
 const restoreButton = document.getElementById('restore');
 const overlayRegister = document.getElementById('overlay_register');
 const overlayRestore = document.getElementById('overlay_restore');
+const containerRestore = document.getElementById('container_restore');
+const containerRegister = document.getElementById('container_register');
+const formRegister = document.querySelector('#container_register form');
 
 function cleanUp(elem) {
   elem.querySelector('form').reset();
@@ -142,16 +145,33 @@ signupButton.addEventListener('click', e => {
   const username = userNameField.value;
 
 
-  if(password == repeat) {
+  if(password == repeat && password.length > 5) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(firebaseUser => firebaseUser.updateProfile({displayName:username}))
     .then(() => userName.innerHTML = `Welcome, ${username}!`)
     .then(cleanUp(overlayRegister))
     .catch(e => console.log(e.message));
     
+  } else if (password == repeat) {
+    console.log("Password too short");
+    const p = document.createElement('p');
+    p.innerHTML = "Sorry, your password is too short";
+    p.style.color = 'tomato';
+    formRegister.insertBefore(p, signupButton);
+    setTimeout(function() {
+      p.remove();
+    }, 5000);
   } else {
-    console.log("Passwords don't match")
-  } 
+    console.log("Passwords don't match");
+    const p = document.createElement('p');
+    p.innerHTML = "Sorry, passwords don't match";
+    p.style.color = 'tomato';
+    formRegister.insertBefore(p, signupButton);
+    setTimeout(function() {
+      p.remove();
+    }, 5000);
+  
+  }
 });
 
 logoutButton.addEventListener('click', e => {
