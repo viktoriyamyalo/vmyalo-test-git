@@ -1,6 +1,5 @@
 const overlayRegisterForm = document.getElementById('overlay_register');
 const overlayRestorePasswordForm = document.getElementById('overlay_restore');
-const sidebar = document.getElementById('burger');
 const fontSizeField = document.getElementById('font_size');
 const backgroundColorField = document.getElementById('background_color');
 const fontFamilyField = document.getElementById('font_family');
@@ -180,29 +179,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('Not logged in');
     welcomeContainer.classList.add('hidden');
     sidebar.classList.add('hidden');
+    sidebar.classList.add('sidebar-hidden');
     signInForm.classList.remove('hidden');
+
     
   }
 });
-
-// function updateUser() {
-//   firebase.auth().onAuthStateChanged(firebaseUser => {
-//   if(firebaseUser) {
-//     console.log(firebaseUser);
-//     signInForm.classList.add('hidden');
-//     userName.innerHTML = `Welcome, ${firebaseUser.displayName}!`;
-//     welcomeContainer.classList.remove('hidden');
-//     sidebar.classList.remove('hidden');
-
-//   } else {
-//     console.log('Not logged in');
-//     welcomeContainer.classList.add('hidden');
-//     sidebar.classList.add('hidden');
-//     signInForm.classList.remove('hidden');
-    
-//   }
-// });
-// }
 
 }());
 
