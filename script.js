@@ -121,6 +121,7 @@ const overlayRestore = document.getElementById('overlay_restore');
 const containerRestore = document.getElementById('container_restore');
 const containerRegister = document.getElementById('container_register');
 const formRegister = document.querySelector('#container_register form');
+let username = '';
 
 function cleanUp(elem) {
   elem.querySelector('form').reset();
@@ -142,13 +143,12 @@ signupButton.addEventListener('click', e => {
   const email = signupEmailField.value;
   const password = signupPasswordField.value;
   const repeat = repeatPasswordField.value;
-  const username = userNameField.value;
+  username = userNameField.value;
 
 
   if(password == repeat && password.length > 5) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(firebaseUser => firebaseUser.updateProfile({displayName:username}))
-    .then(() => userName.innerHTML = `Welcome, ${username}!`)
     .then(cleanUp(overlayRegister))
     .catch(e => console.log(e.message));
     
@@ -179,8 +179,11 @@ logoutButton.addEventListener('click', e => {
 });
 
 restoreButton.addEventListener('click', e => {
+  e.preventDefault()
   const email = restoreEmailField.value;
+  console.log(email);
   firebase.auth().sendPasswordResetEmail(email)
+  .then(console.log('Password link sent'))
   .then(cleanUp(overlayRestore))
   .catch(e => console.log(e.message));
   
@@ -191,7 +194,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser);
     signInForm.classList.add('hidden');
-    userName.innerHTML = `Welcome, ${firebaseUser.displayName}!`;
+    userName.innerHTML = `Welcome, ${firebaseUser.displayName || username }!`;
     welcomeContainer.classList.remove('hidden');
     sidebar.classList.remove('hidden');
 
